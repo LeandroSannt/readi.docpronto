@@ -1,0 +1,180 @@
+/cars:
+  get:
+    tags:
+      - Cars
+    security: []
+    description: Listagem de todos os carros cadastrados no sistema
+    parameters:
+      - name: marches
+        in:  query
+        required: false
+        schema:
+          properties:
+            marches:
+              type: string
+              example: 'automatico'
+              required: true
+      - name: brand
+        in:  query
+        required: false
+        schema:
+          properties:
+            phone:
+              type: string
+              example: 'toyota'
+              required: true
+      - name: model
+        in:  query
+        required: false
+        schema:
+          properties:
+            phone:
+              type: string
+              example: 'corola'
+              required: true
+
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Success
+/cars/store:
+  post:
+    tags:
+        - Cars
+    security: []
+    description: Cadastrar um novo carro
+    parameters:
+      - name: Payload
+        in:  body
+        required: true
+        schema:
+          properties:
+            model:
+              type: string
+              example: 'corola'
+              required: true
+            brand:
+              type: string
+              example: 'toyota'
+              required: true
+            color:
+              type: string
+              example: 'branco'
+              required: true
+            year_fabrication:
+              type: date
+              example: '20-11-2022'
+              required: true
+            year_model:
+              type: date
+              example: '20-11-2022'
+              required: true
+            marches:
+              type: string
+              example: 'manual | automatico'
+              required: true
+            photo:
+              type: file
+              example: 'foto do veiculo'
+              required: false
+
+    produces:
+      - application/json
+    responses:
+      201:
+        description: Created
+/cars/:id:
+  get:
+    tags:
+        - Cars
+    security: []
+    description: Pegar um carro cadastrado
+    parameters:
+      - name: id
+        in:  params
+        required: false
+        schema:
+          properties:
+            marches:
+              type: string
+              example: 'automatico'
+              required: true
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Success
+/cars/:id/updateCar:
+  put:
+    tags:
+        - Cars
+    security: []
+    description: Atualização de um carro
+    parameters:
+      - name: Payload
+        in:  body
+        required: true
+        schema:
+          properties:
+            model:
+              type: string
+              example: 'corola'
+              required: true
+            brand:
+              type: string
+              example: 'toyota'
+              required: true
+            color:
+              type: string
+              example: 'branco'
+              required: true
+            year_fabrication:
+              type: date
+              example: '20-11-2022'
+              required: true
+            year_model:
+              type: date
+              example: '20-11-2022'
+              required: true
+            marches:
+              type: string
+              example: 'manual | automatico'
+              required: true
+            photo:
+              type: file
+              example: 'foto do veiculo'
+              required: false
+
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Updated
+/cars/:id/updatePhoto:
+  patch:
+    tags:
+        - Cars
+    security: []
+    description: Atualização da foto de um carro
+    parameters:
+      - name: Payload
+        in:  body
+        required: true
+        schema:
+          properties:
+            photo:
+              type: file
+              example: 'foto do veiculo'
+              required: false
+
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Updated
+
+
+
+
+
