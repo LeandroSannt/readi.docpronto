@@ -16,6 +16,7 @@ const Table:React.FC<TableProps> = ({cars}) =>{
   return(
     <Container>
       <table >
+        <thead>
         <tr>
           <th>Marca</th>
           <th>Modelo</th>
@@ -25,7 +26,9 @@ const Table:React.FC<TableProps> = ({cars}) =>{
           <th>Tipo de Cambio</th>
           <th></th>
         </tr>
-     
+        </thead>
+
+        <tbody>
         {
         
         !!cars.length ? 
@@ -39,7 +42,7 @@ const Table:React.FC<TableProps> = ({cars}) =>{
         
 
           return(
-            <tr>
+            <tr key={car.id}>
               <td><img src={photo} alt={car.model} /> {car.brand}</td>
               <td>{car.model}</td>
               <td>{car.color}</td>
@@ -53,14 +56,15 @@ const Table:React.FC<TableProps> = ({cars}) =>{
               </td>
             </tr>
           )})
-
         :
-        <div style={{position:'absolute',top:'50px',right:'0',left:"0", textAlign: 'center', marginTop: 25 }}>
-          <span style={{ fontSize: 14 }}>
+        <tr style={{display:"flex",justifyContent:'center', position:'absolute',top:'50px',right:'0',left:"0", textAlign: 'center', marginTop: 25 }}>
+          <td>
             Nenhum resultado encontrado!
-          </span>
-        </div>
+          </td>
+        </tr>
         } 
+        </tbody>
+
       </table>
     </Container>
   )
