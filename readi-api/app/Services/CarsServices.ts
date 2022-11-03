@@ -73,9 +73,6 @@ export default class CarsServices {
       findedCar.photo = photo
       await findedCar.save()
 
-
-
-
       return {
         status:200,
         data:findedCar
