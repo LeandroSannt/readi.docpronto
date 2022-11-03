@@ -15,6 +15,9 @@ export const Container = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
 
+  display: flex;
+  align-items: center;
+
 
   & + div {
     margin-left: 8px;

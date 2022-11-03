@@ -1,9 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-padding: 12px 14px;
-border: solid 1px var(--blue);
-border-radius: 4px;
+  border-radius: 4px;
+  padding: 16px;
+  border: 1px solid var(--blue);
+  color: #666360;
+  display: flex;
+  align-items: center;
 
 input{
   border: none;
