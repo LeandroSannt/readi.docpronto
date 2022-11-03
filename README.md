@@ -1,7 +1,6 @@
-<h1 align='center'>Readi.docPronto</h1>
+<h1 align='center'>Teste de seleção para a empresa readi.docpronto</h1>
 
-<p>Teste de seleção para a empresa readi.docpronto, sistema de registro de veiculos, aonde foi feito as tarefas solicitadas, onde dei um toque a mais , adicionando a foto de um veiculo, e podendo fazer a edição do proprio, alem de incluir uma documentação,
-e armazenar os dados em cache para otimizar a performace do sistema  </p>
+<p>Sistema de registro de veículos, onde foram feitas as tarefas solicitadas, com um toque a mais, podendo adicionar a foto do veículo, editar informações e incluir a documentação com o swagger. Ainda sim,  armazena os dados em cache para otimizar a performace do sistema  </p>
 
 
 ## 🛠 Tecnologias | Dependências
@@ -26,7 +25,7 @@ e armazenar os dados em cache para otimizar a performace do sistema  </p>
 
 ## <h4 align="center"> 
     🚀 Projeto concluido
-## pré-requisito
+## Pré-requisito
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: 
 
