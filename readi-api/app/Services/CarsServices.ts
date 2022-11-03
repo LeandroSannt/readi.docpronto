@@ -22,7 +22,7 @@ export default class CarsServices {
       if(brand){
         query.whereLike('brand', `%${brand}%`)
       }
-      if(marches){
+      if(marches && marches !== 'todos'){
         query.whereLike('marches', `%${marches}%`)
       }
       if(model){
