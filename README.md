@@ -44,9 +44,10 @@ $ git clone https://github.com/LeandroSannt/readi.docpronto.git
 
 ## Para iniciar o backend 
 
-1 - Instale as dependencias com : yarn ou npm
-2 - Rode as migrations com : node ace migration:run
-3 - Execute o backend com : yarn dev
+1 - Entre no repositorio: cd readi-api
+2 - Instale as dependencias com : yarn ou npm
+3 - Rode as migrations com : node ace migration:run
+4 - Execute o backend com : yarn dev
 
 # O servidor iniciará na porta:3333, acesse <http://localhost:3333>
 
@@ -54,9 +55,12 @@ Obs: como adicional criei um arquivo swagger para documentar as rotas para acess
 
 #<http://localhost:3333/docs/index.html#/>
 
+Em outro terminal inicie o frontend
+
 ## Para iniciar o frontend
 
-1 - Instale as dependencias com : yarn ou npm
-2 - Execute o frontend com : yarn dev
+1 - Entre no repositorio: cd readi-front
+2 - Instale as dependencias com : yarn ou npm
+3 - Execute o frontend com : yarn dev
 
 ```
