@@ -30,7 +30,6 @@ table {
 }
 
 
-
 td, th {
   text-align: left;
   padding: 8px;
@@ -44,6 +43,7 @@ td:has(img){
   img{
     width: 35px;
     height: 35px;
+    object-fit: cover;
     border-radius: 50%;
     border:solid 1px var(--blue) ;
     margin-right: 10px;

@@ -30,14 +30,7 @@ interface DataProps{
 }
 
 const Details:React.FC = () =>{
-  const formRef= useRef<FormHandles>(null)
-  const navigate = useNavigate()
-  const [avatar, setAvatar] = useState<File>()
-  const [cambio, setCambio] = useState('automatico')
-  const inputRef = useRef<HTMLInputElement>(null);
-  const {notify} = useToast()
   const {id} = useParams()
-
 
   const {data:car} = useQuery<CarProps>(['car',id], async () =>{
     if(id){
@@ -45,6 +38,20 @@ const Details:React.FC = () =>{
       return response.data
     }
   })
+
+  const formRef= useRef<FormHandles>(null)
+  const navigate = useNavigate()
+  const [avatar, setAvatar] = useState<File>()
+  const [cambio, setCambio] = useState('automatico')
+  const inputRef = useRef<HTMLInputElement>(null);
+  const {notify} = useToast()
+
+  useEffect(() =>{
+    if(car?.marches){
+      setCambio(car.marches)
+    }
+  },[car?.marches])
+ 
 
   const handleSubmit = useCallback(async(data:DataProps) =>{
     try{
@@ -73,6 +80,7 @@ const Details:React.FC = () =>{
       formData.append('year_model', data.year_model);
       formData.append('marches', cambio);
       file && formData.append('photo',file);
+
 
       if(id){
         await api.put(`cars/${id}/updateCar`,formData)
@@ -108,7 +116,7 @@ const Details:React.FC = () =>{
       })
     }
     }
-  },[])
+  },[cambio])
 
   const handleAvatarChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -183,7 +191,7 @@ const Details:React.FC = () =>{
 
                 <div className='contentLabel'>
                 <Input name="year_model" placeholder="Ano do modelo" type="number" />
-                <select defaultValue={car?.marches} onChange={(e) =>{setCambio(e.target.value)}} >
+                <select value={cambio}  onChange={(e) =>{setCambio(e.target.value)}} >
                   <option value="automatico">Automatico</option>
                   <option value="manual">Manual</option>
                 </select>
